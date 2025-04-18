@@ -73,6 +73,10 @@ Docker networks let containers talk to each other and to the outside world, with
 
 It is a tool that lets you define and run multi-container docker applications using a simple file(YAML). It manages multiple containers as one app (e.g., frontend + backend + database) also defines networks, volumes, dependencies, and environment variables.
 
+## Docker Volumes
+
+Docker Volumes are a way to store and persist data outside of containers, ensuring that data survives container restarts or re-creations.
+
 ## Docker Quick Notes
 
 ### Port Binding
@@ -89,3 +93,12 @@ It is a tool that lets you define and run multi-container docker applications us
 
 - export all environment variables to terminal.
 - Or make consolidated environment variables in a file and use secret attribute.
+
+### Volumes types
+
+- Anonymous volumes
+- Named volumes (Recommended)
+
+n Docker Compose, volumes must be specified in each container's section, and all used volumes should be listed under the volumes section at the end of the file.
+
+> Volume syntax: `${host_path:container_path}` or `${named_volume:container_path}`
